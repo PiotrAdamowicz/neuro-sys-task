@@ -1,0 +1,30 @@
+.contact{
+    display: none;
+    top: 0;
+    right: -50%;
+    bottom: 0;
+    position: absolute;
+    width: 50%;
+    border-radius: 1rem;
+    transition: all .3 ease-in;
+    .submitBtn{
+        letter-spacing: 2px;
+        border-width: 2px;
+
+    }
+    &--active{
+        display: block;
+        right:0;
+    }
+    
+}
+.activatorBtn{
+    position: fixed;
+    top:0;
+    right:0;
+    background-color: transparent;
+    padding: 1rem;
+    &--active{
+        right:50%;
+    }
+}
