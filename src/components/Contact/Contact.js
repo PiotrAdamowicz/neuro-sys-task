@@ -59,7 +59,7 @@ export default function Contact(props) {
         xs={6}
         className={`contact ${
           isActive ? "contact--active" : ""
-        } px-5 pt-2 form text-secondary bg-dark`}
+        } px-5 pt-2 form text-secondary bg-dark position-absolute`}
       >
         <Form.Label className="mb-2 d-flex align-items-center">
           First Name:
@@ -81,7 +81,7 @@ export default function Contact(props) {
           Message:
         </Form.Label>
         <Form.Control as="textarea" rows={3} placeholder="Your message here" />
-        <UserValidation questions={questions}>
+        <UserValidation questions={questions} isActive={isActive}>
           <Button
             className="submitBtn my-4 font-weight-bold"
             size="lg"

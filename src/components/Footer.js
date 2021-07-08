@@ -2,8 +2,15 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div>
-      <footer>Some foots</footer>
-    </div>
+    <footer className="text-secondary w-100 py-4 bg-primary" id="footer">
+      Made by{" "}
+      <a
+        className="text-danger"
+        href="https://www.facebook.com/piotr.adamowicz.927/"
+      >
+        Piotr Adamowicz
+      </a>{" "}
+      for NeuroSys recruitment in 2021
+    </footer>
   );
 }

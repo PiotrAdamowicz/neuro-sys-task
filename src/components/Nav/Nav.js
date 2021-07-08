@@ -13,13 +13,18 @@ export default function Navigation() {
         THE WHITE STRIPES
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link className="text-secondary fw-bold" href="/footer">
+        <Nav.Link className="text-white" href="#albums">
+          Albums
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link className="text-secondary fw-bold" href="#about">
           About
         </Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link className="text-white" eventKey="link-2">
-          Link
+        <Nav.Link className="text-secondary fw-bold" href="#footer">
+          Footer
         </Nav.Link>
       </Nav.Item>
     </Nav>

@@ -1,9 +1,10 @@
 .contact{
+    z-index:300;
     display: none;
     top: 0;
     right: -50%;
     bottom: 0;
-    position: absolute;
+    // position: absolute;
     width: 50%;
     border-radius: 1rem;
     transition: all .3 ease-in;

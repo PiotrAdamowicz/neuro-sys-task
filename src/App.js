@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Navigation from "./components/Nav/Nav";
 import Footer from "./components/Footer";
-import Card from "react-bootstrap/Card";
 import Contact from "./components/Contact/Contact";
+import { Container, Row, Col } from "react-bootstrap";
+import Albums from "./components/Albums/Albums";
 
 function App() {
   const [contact, setContact] = useState(false);
@@ -14,59 +15,62 @@ function App() {
     setContact(!contact);
   };
   const submitHandler = (e) => {
-    console.log(e.target.value);
+    e.preventDefault();
+    console.log(e.currentTarget.checkValidity());
     const form = e.currentTarget;
     if (form.checkValidity() === false) {
       e.preventDefault();
       e.stopPropagation();
     }
-
+    setContact(false);
     setValidated(true);
   };
 
   return (
     <div className="App">
       <Navigation />
-      <main>
-        <Card className="card bg-primary" bg="accent" varian="primary">
-          <Card.Text className="text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
-            utiste quibusdam asperiores voluptate dolorem odio doloribus! Iure
-            quia pariatur repudiandae quo, tempora eveniet, porro odio velit sit
-            repellat aut? Vitae veniam iure maxime repudiandae. Pariatur eos
-            eligendi debitis neque doloremque minima earum repellendus tempora
-            architecto sed ipsa quo culpa voluptatibus vero, molestias hic qui
-            nam. Excepturi nobis, doloremque aspernatur voluptatum labore totam
-            eaque debitis nulla veniam eligendi dolores dolor officiis repellat
-            alias repudiandae. Unde quibusdam est harum ducimus quaerat, beatae
-            molestiae nihil iure modi voluptate temporibus ad magni quae fugit
-            reprehenderit, magnam distinctio laudantium cum voluptates sequi sit
-            necessitatibus, quidem similique nemo. Mollitia ab iste placeat in
-            fuga ullam similique autem modi laudantium. Magni omnis, quam
-            aperiam accusamus expedita ratione. Beatae nulla quidem nisi
-            excepturi, deleniti eligendi adipisci nam, error dolorum earum sint
-            quis possimus. Odio saepe debitis ipsam cumque totam temporibus
-            numquam quod praesentium reiciendis molestiae a dicta voluptatibus
-            nam nemo fugiat, voluptas tenetur aut quisquam recusandae inventore?
-            Repellat, sapiente. Reprehenderit error doloribus consequuntur
-            soluta. Quidem consectetur fugiat minima id laboriosam cum tempora
-            placeat non. Ullam fuga laboriosam nisi! Aperiam nostrum corporis
-            doloribus, quaerat, eaque delectus, facere accusantium molestiae
-            perspiciatis reprehenderit error sunt aut quidem. Dolores
-            reiciendis, esse quae ullam omnis fugiat ipsam recusandae? Iusto,
-            iste corporis. Provident fugiat doloribus modi eius quas voluptas
-            aliquid perspiciatis nostrum laboriosam officiis repudiandae
-            reprehenderit doloremque unde, nihil autem perferendis nobis ullam
-            temporibus, harum quod enim error quae! Blanditiis necessitatibus,
-            dignissimos ab cumque odit saepe ipsam nulla aliquam reprehenderit
-            eos accusamus et unde, tenetur quis pariatur voluptas, aut omnis
-            eveniet? Fuga possimus officiis saepe, pariatur, tempore, maiores
-            dolores dignissimos eius magnam accusamus cum nobis nulla alias nemo
-            dolor! Non distinctio nobis laborum, illo harum odio, optio iure
-            culpa ea eveniet temporibus beatae deserunt atque ducimus cum a
-            sint, modi quasi magnam minus.
-          </Card.Text>
-        </Card>
+      <main className="w-80 ">
+        <Container>
+          <Row>
+            <Col>
+              <Albums />
+            </Col>
+          </Row>
+          <Row className="">
+            <Col>
+              <article
+                id="about"
+                className="card text-white bg-dark justify-content-center"
+              >
+                <img
+                  className="img"
+                  src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Jack_%26_Meg%2C_The_White_Stripes.jpg"
+                  alt="The White Stripes performing at the O2 Wireless Festival, June 2007"
+                />
+                <h2 className="px-4 pt-5 font-weight-bold bg-dark text-start">
+                  The White Stripes
+                </h2>
+                <div className="text px-5 py-3 bg-dark">
+                  Were an American rock duo from Detroit, Michigan formed in
+                  1997. The group consisted of Jack White (songwriter, vocals,
+                  guitar, piano, and mandolin) and his one-time wife Meg White
+                  (drums and vocals). After releasing several singles and three
+                  albums within the Detroit music scene, the White Stripes rose
+                  to prominence in 2002 as part of the garage rock revival
+                  scene. Their successful and critically acclaimed albums White
+                  Blood Cells and Elephant drew attention from a large variety
+                  of media outlets in the United States and the United Kingdom.
+                  The single "Seven Nation Army", which used a guitar and an
+                  octave pedal to create the iconic opening riff,<sup>[1]</sup>
+                  became one of their most recognizable songs. The band recorded
+                  two more albums, Get Behind Me Satan in 2005 and Icky Thump in
+                  2007, and dissolved in 2011 after a lengthy hiatus from
+                  performing and recording.<sup>[2]</sup>
+                </div>
+              </article>
+            </Col>
+          </Row>
+        </Container>
       </main>
       <Footer />
       <Contact
