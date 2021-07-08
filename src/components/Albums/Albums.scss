@@ -1,34 +1,10 @@
 
 .carousel-item{
-    max-width:700px;
-    height: 350px;
-    
-    &.captions{
-        display:flex;
-        justify-content: space-between;
-        &.carousel-caption{
-            width: 50%;
-        }  
+    min-height: 360px;
+    .shadow{
+        box-shadow: 2px 2px 4px #fff;;
     }
-  
-  .img2{
-      float:Right;
-  }
-  img{
-      width: 50%;
+    .link{
+        text-shadow: 2px 2px 4px black;
     }
-.titles{
-    position: relative;
-    &.title1{
-        position: absolute;
-        top:20%;
-        left: 0;
-    }
-    &.title2{
-        position: absolute;
-        top:20%;
-        right: 0;
-    }
-}
-
 }
