@@ -6,7 +6,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Albums from "./components/Albums/Albums";
 
 function App() {
-  const [contact, setContact] = useState(false);
+  const [contact, setContact] = useState(true);
   const [validated, setValidated] = useState(false);
 
   const toggleHandler = (e) => {

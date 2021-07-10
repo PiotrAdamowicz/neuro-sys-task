@@ -59,7 +59,7 @@ export default function Contact(props) {
         xs={6}
         className={`contact ${
           isActive ? "contact--active" : ""
-        } px-5 pt-2 form text-secondary bg-dark position-absolute`}
+        } px-5 pt-2 form text-secondary bg-dark position-fixed`}
       >
         <Form.Label className="mb-2 d-flex align-items-center">
           First Name:
