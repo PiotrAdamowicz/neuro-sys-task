@@ -12,9 +12,9 @@ const UserValidation = (props) => {
   return (
     <div className="contact text-secondary">
       <ul className="text-secondary">
-        <li>Some tehxt</li>
-        <li></li>
-        <li></li>
+        <li>Some text</li>
+        <li>More</li>
+        <li>And some</li>
         {submit ? props.children : null}
       </ul>
       <Snackbar />
