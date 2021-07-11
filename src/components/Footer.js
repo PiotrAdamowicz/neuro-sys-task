@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="text-secondary w-100 py-4 bg-primary" id="footer">
+    <footer className="text-secondary py-4 bg-primary" id="footer">
       Made by{" "}
       <a
         className="text-danger"

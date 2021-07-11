@@ -5,7 +5,8 @@ import "../../App.scss";
 export default function Navigation() {
   return (
     <Nav
-      className="nav p-3"
+      fill
+      className="d-fixed nav p-3"
       activeKey="/home"
       onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
     >
@@ -23,8 +24,8 @@ export default function Navigation() {
         </Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link className="text-secondary fw-bold" href="#footer">
-          Footer
+        <Nav.Link className="text-secondary fw-bold" href="#videos">
+          Videos
         </Nav.Link>
       </Nav.Item>
     </Nav>

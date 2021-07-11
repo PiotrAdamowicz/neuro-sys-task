@@ -79,10 +79,11 @@ export default function Contact(props) {
             >
               <Row>
                 <Col xs={6}>
-                  <Form.Label className="mb-2 d-flex align-items-center">
+                  <Form.Label className="mb-2 mt-5 d-flex align-items-center">
                     First Name:
                   </Form.Label>
                   <Form.Control
+                    size="lg"
                     onChange={changeHandler}
                     type="text"
                     value={form.first}
@@ -91,10 +92,11 @@ export default function Contact(props) {
                   />
                 </Col>
                 <Col xs={6}>
-                  <Form.Label className="mb-2 pr-2 d-flex align-items-center">
+                  <Form.Label className="mb-2 mt-5 pr-2 d-flex align-items-center">
                     Last Name:
                   </Form.Label>
                   <Form.Control
+                    size="lg"
                     onChange={changeHandler}
                     type="text"
                     value={form.last}
@@ -109,6 +111,7 @@ export default function Contact(props) {
                     Email:
                   </Form.Label>
                   <Form.Control
+                    size="lg"
                     onChange={changeHandler}
                     type="email"
                     value={form.mail}
@@ -121,6 +124,7 @@ export default function Contact(props) {
                     Phone:
                   </Form.Label>
                   <Form.Control
+                    size="lg"
                     onChange={changeHandler}
                     type="number"
                     value={form.phone}
@@ -129,16 +133,18 @@ export default function Contact(props) {
                   />
                 </Col>
               </Row>
-              <Form.Label className="my-2 pr-2 d-flex align-items-center">
+              <Form.Label className="mt-3 pr-2 d-flex align-items-center">
                 Message:
               </Form.Label>
               <Form.Control
+                size="lg"
                 onChange={changeHandler}
                 as="textarea"
                 value={form.message}
                 name="message"
                 rows={3}
                 placeholder="Your message here"
+                className="mb-1"
               />
               <UserValidation
                 submited={submited}

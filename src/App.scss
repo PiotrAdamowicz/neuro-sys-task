@@ -4,7 +4,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
+
+:root{
+  scroll-behavior: smooth;
+}}
 .App {
   text-align: center;
   background-color: #0E0E0E;

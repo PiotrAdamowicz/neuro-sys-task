@@ -36,10 +36,10 @@ export default function UserValidation(props) {
     <Container>
       <Row>
         <Col xl={{ span: 10, offset: 1 }}>
-          <ul className="quiz">
-            <p className="mt-4 text-center">{questions[i].question[0]}</p>
+          <ul className="quiz mb-5">
+            <p className="mt-1 text-center">{questions[i].question[0]}</p>
             {questions[i].answers.map((item, id) => (
-              <li className="question d-flex danger" key={item}>
+              <li className="question d-flex danger my-2" key={item}>
                 <div className="text-center">
                   <Form.Check
                     inline
@@ -53,7 +53,7 @@ export default function UserValidation(props) {
                 <span className="text-center">{item}</span>
               </li>
             ))}
-            <p className="my-2 text-center">{questions[i].question[1]}</p>
+            <p className="my-4 text-center">{questions[i].question[1]}</p>
             {submit ? props.children : null}
           </ul>
         </Col>

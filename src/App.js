@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Contact from "./components/Contact/Contact";
 import { Container, Row, Col } from "react-bootstrap";
 import Albums from "./components/Albums/Albums";
+import Video from "./components/Video/Video";
 
 function App() {
   const questions = [
@@ -36,7 +37,7 @@ function App() {
       checked: false,
     },
   ];
-  const [contact, setContact] = useState(true);
+  const [contact, setContact] = useState(false);
   const [validated, setValidated] = useState(false);
   const [i, setI] = useState(0);
   const [reset, setReset] = useState(false);
@@ -69,7 +70,7 @@ function App() {
             <main className="">
               <Container>
                 <Row className="align-middle px-auto">
-                  <Col xl={{ span: 10, offset: 1 }}>
+                  <Col xl={{ span: 10, offset: 1 }} xs={12}>
                     <Albums />
                   </Col>
                 </Row>
@@ -87,7 +88,7 @@ function App() {
                       <h2 className="px-4 pt-5 font-weight-bold bg-dark text-start">
                         The White Stripes
                       </h2>
-                      <div className="text px-5 py-3 bg-dark">
+                      <div className="text px-md-5 px-3 text-justify py-3 mb-5 bg-dark">
                         Were an American rock duo from Detroit, Michigan formed
                         in 1997. The group consisted of Jack White (songwriter,
                         vocals, guitar, piano, and mandolin) and his one-time
@@ -111,7 +112,28 @@ function App() {
                   </Col>
                 </Row>
               </Container>
+              <Video
+                list={[
+                  {
+                    src: "https://www.youtube.com/embed/yXlULkwhgrc",
+                    tooltip: "Awesome cover",
+                  },
+                  {
+                    src: "https://www.youtube.com/embed/rxHTCGKwVWM",
+                    tooltip: "My personal favorite",
+                  },
+                  {
+                    src: "https://www.youtube.com/embed/EzD-KCb2Kww",
+                    tooltip: "Very interesting tour in Canda",
+                  },
+                  {
+                    src: "https://www.youtube.com/embed/LRXcOg7QXbo",
+                    tooltip: "meh",
+                  },
+                ]}
+              />
             </main>
+
             <Footer />
             <Contact
               reset={reset}
