@@ -1,37 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Contact.scss";
 import UserValidation from "../UserValidation/UserValidation";
+import Snackbar from "../UserValidation/Snackbar";
 
 export default function Contact(props) {
-  const questions = [
-    {
-      id: 0,
-      question: ["From what city White Stripes originated?"],
-      answers: ["New York", "Kansas", "Detroit"],
-      correct: 2,
-    },
-    {
-      id: 1,
-      question: ["Are Jack & Meg related?"],
-      answers: ["Yes", "No"],
-      correct: 1,
-    },
-    {
-      id: 2,
-      question: ["What instruments are used in Seven Nation Army"],
-      answers: ["Bass Guitar", "Electric Guitar", "Piano"],
-      correct: 1,
-    },
-    {
-      id: 3,
-      question: ["Jack is...", "...son."],
-      answers: ["7th", "2nd", "3rd"],
-      correct: 0,
-    },
-  ];
-  const { isActive, toggleHandler, submitHandler, validated } = props;
+  const [showSnackbar, setShowSnackbar] = useState(false);
+  const [submited, setSubmited] = useState(false);
+
+  const {
+    isActive,
+    toggleHandler,
+    submitHandler,
+    validated,
+    questions,
+    i,
+    Ihandler,
+  } = props;
+  useEffect(() => {
+    setShowSnackbar(true);
+    setSubmited(true);
+  }, [validated]);
   return (
     <>
       <Button
@@ -81,15 +71,14 @@ export default function Contact(props) {
           Message:
         </Form.Label>
         <Form.Control as="textarea" rows={3} placeholder="Your message here" />
-        <UserValidation questions={questions} isActive={isActive}>
-          <Button
-            className="submitBtn my-4 font-weight-bold"
-            size="lg"
-            variant="outline-danger"
-            type="submit"
-          >
-            SUBMIT
-          </Button>
+        <UserValidation
+          submited={submited}
+          questions={questions}
+          isActive={isActive}
+          i={i}
+          Ihandler={Ihandler}
+        >
+          <Snackbar showSnackbar={showSnackbar} />
         </UserValidation>
       </Form>
     </>

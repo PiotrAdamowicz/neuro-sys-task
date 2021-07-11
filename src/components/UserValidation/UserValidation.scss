@@ -1,10 +1,10 @@
 ul{
     list-style: none;
-}
-.question{
-    display: flex;
     
 }
+.checkbox::after,.checkbox::before,.checkbox{
+    cursor:pointer;
+}
 .contact{
-    position: relative;
+    // position: relative;
 }

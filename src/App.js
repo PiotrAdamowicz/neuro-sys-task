@@ -6,8 +6,39 @@ import { Container, Row, Col } from "react-bootstrap";
 import Albums from "./components/Albums/Albums";
 
 function App() {
+  const questions = [
+    {
+      id: 0,
+      question: ["From what city White Stripes originated?"],
+      answers: ["New York", "Kansas", "Detroit"],
+      correct: 2,
+      checked: false,
+    },
+    {
+      id: 1,
+      question: ["Are Jack & Meg related?"],
+      answers: ["Yes", "No"],
+      correct: 1,
+      checked: false,
+    },
+    {
+      id: 2,
+      question: ["What instruments are used in Seven Nation Army"],
+      answers: ["Bass Guitar", "Electric Guitar", "Piano"],
+      correct: 1,
+      checked: false,
+    },
+    {
+      id: 3,
+      question: ["Jack is...", "...son."],
+      answers: ["7th", "2nd", "3rd"],
+      correct: 0,
+      checked: false,
+    },
+  ];
   const [contact, setContact] = useState(true);
   const [validated, setValidated] = useState(false);
+  const [i, setI] = useState(0);
 
   const toggleHandler = (e) => {
     e.preventDefault();
@@ -84,6 +115,9 @@ function App() {
               isActive={contact}
               submitHandler={submitHandler}
               toggleHandler={toggleHandler}
+              questions={questions}
+              i={i}
+              Ihandler={setI}
             />
           </Col>
         </Row>
