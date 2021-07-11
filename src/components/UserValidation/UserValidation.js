@@ -24,8 +24,6 @@ export default function UserValidation(props) {
     setCheckedState(new Array(questions[i].answers.length).fill(false));
 
     if (id == questions[i].correct) {
-      const state = setCheckedState;
-      setCheckedState(state);
       setSubmit(true);
     } else {
       Ihandler(Math.floor(Math.random() * questions.length));
@@ -47,7 +45,7 @@ export default function UserValidation(props) {
                     inline
                     id={id}
                     className="checkbox justify-content-center"
-                    checked={checkedState}
+                    checked={checkedState[i]}
                     onChange={changeHandler}
                     type="checkbox"
                   />

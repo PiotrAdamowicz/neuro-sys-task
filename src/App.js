@@ -39,6 +39,7 @@ function App() {
   const [contact, setContact] = useState(true);
   const [validated, setValidated] = useState(false);
   const [i, setI] = useState(0);
+  const [reset, setReset] = useState(false);
 
   const toggleHandler = (e) => {
     e.preventDefault();
@@ -47,7 +48,7 @@ function App() {
   };
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(e.currentTarget.checkValidity());
+    console.log(e.currentTarget);
     const form = e.currentTarget;
     if (form.checkValidity() === false) {
       e.preventDefault();
@@ -55,6 +56,8 @@ function App() {
     }
     setContact(false);
     setValidated(true);
+
+    setReset(true);
   };
 
   return (
@@ -111,6 +114,8 @@ function App() {
             </main>
             <Footer />
             <Contact
+              reset={reset}
+              setReset={setReset}
               validated={validated}
               isActive={contact}
               submitHandler={submitHandler}

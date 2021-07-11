@@ -1,0 +1,14 @@
+@import "../../styles/colors";
+
+.close>span{
+    color: $danger;
+    text-shadow: none;
+    
+}
+.modal-content{
+    border: 2px solid $danger !important;
+    &>div{
+        border-bottom: black;
+        
+    }
+}
